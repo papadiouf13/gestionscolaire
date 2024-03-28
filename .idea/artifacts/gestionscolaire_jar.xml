@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="gestionscolaire:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/gestionscolaire_jar</output-path>
+    <root id="archive" name="gestionscolaire.jar">
+      <element id="module-output" name="gestionscolaire" />
+    </root>
+  </artifact>
+</component>
