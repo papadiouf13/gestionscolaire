@@ -252,6 +252,7 @@
                 int i=1;
             %>
             <table class="table">
+                <caption>Description du Tableau</caption>
                 <thead>
                 <tr>
                     <th scope="col">#</th>
