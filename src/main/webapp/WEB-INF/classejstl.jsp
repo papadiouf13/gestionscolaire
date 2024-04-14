@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html xml:lang="fr" lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -251,6 +251,7 @@
         <div class="container">
             <c:set var="i" value="1" scope="page"/>
             <table class="table table-striped">
+                <caption>Description du Tableau</caption>
                 <thead class="table-dark">
                 <tr>
                     <th scope="col">#</th>

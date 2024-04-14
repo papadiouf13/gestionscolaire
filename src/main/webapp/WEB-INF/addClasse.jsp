@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html xml:lang="fr" lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -164,6 +164,7 @@
             transition: all .2s ease-out;
         }
     </style>
+</head>
 
 <body>
 <div class="wrapper">
@@ -246,13 +247,13 @@
                     <div class="flex-grow-1 mx-3">
                         <div class="mb-3">
                             <label class="form-label">Libelle</label>
-                            <input type="text" name="libelle" class="form-control" placeholder="saisir la libelle">
+                            <input type="text" id="libelle" class="form-control" placeholder="saisir la libelle">
                         </div>
                     </div>
                     <div class="flex-grow-1 mx-3">
                         <div class="mb-3">
                             <label class="form-label">Code</label>
-                            <input type="text" name="code" class="form-control" placeholder="saisir le code">
+                            <input type="text" id="code" class="form-control" placeholder="saisir le code">
                         </div>
                     </div>
                 </div>
@@ -260,13 +261,13 @@
                     <div class="flex-grow-1 mx-3">
                         <div class="mb-3">
                             <label class="form-label">Frais Inscription</label>
-                            <input type="text" name="frais_inscription" class="form-control" placeholder="saisir frais d'inscription">
+                            <input type="text" id="frais_inscription" class="form-control" placeholder="saisir frais d'inscription">
                         </div>
                     </div>
                     <div class="flex-grow-1 mx-3">
                         <div class="mb-3">
                             <label class="form-label">Mensualité</label>
-                            <input type="text" name="mensualite" class="form-control" placeholder="saisir mensualité">
+                            <input type="text" id="mensualite" class="form-control" placeholder="saisir mensualité">
                         </div>
                     </div>
                 </div>
@@ -274,13 +275,13 @@
                     <div class="flex-grow-1 mx-3">
                         <div class="mb-3">
                             <label class="form-label">Autres Frais</label>
-                            <input type="text" name="autres_frais" class="form-control" placeholder="saisir autre frais">
+                            <input type="text" id="autres_frais" class="form-control" placeholder="saisir autre frais">
                         </div>
                     </div>
                     <div class="flex-grow-1 mx-3">
                         <div class="mb-3">
                             <label class="form-label">Filiere</label>
-                            <select id="disabledSelect" class="form-select" name="idfiliere" required>
+                            <select id="idfiliere" class="form-select" required>
                                 <option value="">Selectionner une filiere</option>
                                 <c:forEach var="f" items="${requestScope.data}">
                                     <c:choose>
