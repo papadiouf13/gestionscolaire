@@ -26,9 +26,9 @@ pipeline {
         stage('Sonarqube Analysis ') {
             steps {
                 withSonarQubeEnv('sonar-server') {
-                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=demo221 \
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Projet_Servlet \
                     -Dsonar.java.binaries=. \
-                    -Dsonar.projectKey=demo221 '''
+                    -Dsonar.projectKey=Projet_Servlet '''
                 }
             }
         }
@@ -53,8 +53,8 @@ pipeline {
         stage('Docker Build & Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
-                        sh 'docker build -t spring-app .'
+                    withDockerRegistry(credentialsId: 'sonar-token', toolName: 'docker') {
+                        sh 'docker build -t servlet-app .'
                     }
                 }
             }
@@ -63,17 +63,17 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh 'docker stop spring-container'
-                        sh 'docker rm spring-container'
+                        sh 'docker stop servlet-container'
+                        sh 'docker rm servlet-container'
                 } catch (Exception e) {
-                        echo 'Container spring-container not found, moving to next stage'
+                        echo 'Container servlet-container not found, moving to next stage'
                     }
                 }
             }
         }
         stage('Deploy to conatainer') {
             steps {
-                sh 'docker run -d --name spring-container -p 8082:8080 spring-app'
+                sh 'docker run -d --name servlet-container -p 8082:8080 servlet-app'
             }
         }
         
