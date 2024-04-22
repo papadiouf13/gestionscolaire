@@ -53,7 +53,7 @@ pipeline {
         stage('Docker Build & Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'sonar-token', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: '7bce7f99-9782-4f6e-b72f-e72ea703244a', toolName: 'docker') {
                         sh 'docker build -t servlet-app .'
                     }
                 }
